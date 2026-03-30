@@ -15,7 +15,7 @@
 bl_info = {
     "name": "OpenCue Blender Submitter",
     "version": (1, 0),
-    "blender": (3, 0, 0),
+    "blender": (4, 4, 0),
     "category": "Render",
 }
 
