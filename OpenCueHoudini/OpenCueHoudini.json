@@ -1,0 +1,22 @@
+{
+    "name": "OpenCueHoudini",
+    "description": "OpenCue integration for Houdini - render submission and job management",
+    "version": "1.0.0",
+    "author": "OpenCue Team",
+    "status": "production",
+
+    "env": [
+        {
+            "HOUDINI_PATH": {
+                "value": "${HOUDINI_PACKAGE_PATH}",
+                "method": "append"
+            }
+        },
+        {
+            "PYTHONPATH": {
+                "value": "${HOUDINI_PACKAGE_PATH}/python",
+                "method": "append"
+            }
+        }
+    ]
+}
