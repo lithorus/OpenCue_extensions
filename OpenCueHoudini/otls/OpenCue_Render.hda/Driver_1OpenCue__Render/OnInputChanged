@@ -1,0 +1,22 @@
+node = kwargs.get("node")
+input_idx = kwargs.get("input_index", 0)
+
+if node:
+    connected_node = node.input(input_idx)
+    
+    if connected_node:
+        # Define allowed node type names (e.g., 'cam', 'geo', 'null', or specific ROPs)
+        allowed_types = {"OpenCue_Render"}
+        
+        # Check node type
+        if connected_node.type().name() not in allowed_types:
+            # Sever the wire immediately
+            node.setInput(input_idx, None)
+            
+            # Show a friendly warning pop-up
+            hou.ui.displayMessage(
+                f"Invalid connection!\n\n"
+                f"Node '{connected_node.name()}' ({connected_node.type().name()}) is not allowed.\n"
+                f"Allowed types: {', '.join(sorted(allowed_types))}",
+                severity=hou.severityType.Warning
+            )

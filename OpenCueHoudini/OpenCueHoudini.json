@@ -14,7 +14,7 @@
         },
         {
             "PYTHONPATH": {
-                "value": "${HOUDINI_PACKAGE_PATH}/python",
+                "value": "${HOUDINI_PACKAGE_PATH}/scripts",
                 "method": "append"
             }
         }
